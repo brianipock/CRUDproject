@@ -6,46 +6,49 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="styles" href="styles.css">
+<link type="text/css" rel="stylesheet" href="normalize.css">
+<link type="text/css" rel="stylesheet" href="styles.css">
 <title>Plastic</title>
 </head>
 <body>
 	<h2>Plastic Surgery</h2>
-<ul>
-	<li><a href="getProcedures.do">View procedures</a></li>
-	<li><a href="getCountries.do">View Countries</a></li>
-	<li><a href="getFacilities.do">View Facilities</a></li>
-	<li><a href="getDoctors.do">View Doctors</a></li>
-</ul>
+	<div id="header">
+	<ul>
+		<li><a class="active" href="getProcedures.do">View procedures</a></li>
+		<li><a href="getCountries.do">View Countries</a></li>
+		<li><a href="getFacilities.do">View Facilities</a></li>
+		<li><a href="getDoctors.do">View Doctors</a></li>
+	</ul>
+	</div>
 	<c:choose>
-	<c:when test="${not empty procedures}">
-		<form action="goToAddProcedureForm.do">
-			<input type="submit" value="Add New Procedure" />
-		</form>
-	</c:when>
-	<c:when test="${not empty countries}">
-		<form action="goToAddCountryForm.do">
-			<input type="submit" value="Add New Country" />
-		</form>
-	</c:when>
-	<c:when test="${not empty facilities}">
-		<form action="goToAddFacilityForm.do">
-			<input type="submit" value="Add New Facility" />
-		</form>
-	</c:when >
-	<c:when test="${not empty doctors}">
-	<form action="goToAddDoctorForm.do">
-			<input type="submit" value="Add New Doctor" />
-		</form>
-	</c:when>
+		<c:when test="${not empty procedures}">
+			<form action="goToAddProcedureForm.do">
+				<input type="submit" value="Add New Procedure" />
+			</form>
+		</c:when>
+		<c:when test="${not empty countries}">
+			<form action="goToAddCountryForm.do">
+				<input type="submit" value="Add New Country" />
+			</form>
+		</c:when>
+		<c:when test="${not empty facilities}">
+			<form action="goToAddFacilityForm.do">
+				<input type="submit" value="Add New Facility" />
+			</form>
+		</c:when>
+		<c:when test="${not empty doctors}">
+			<form action="goToAddDoctorForm.do">
+				<input type="submit" value="Add New Doctor" />
+			</form>
+		</c:when>
 	</c:choose>
 	<c:forEach var="procedure" items="${procedures}">
 		<form action="removeProcedure.do">
-			${procedure.procedureName} 
-			<input type="hidden" name="name" value="${procedure.procedureName}" /> 
-			<input type="submit" value="Remove" />
+			${procedure.procedureName} <input type="hidden" name="name"
+				value="${procedure.procedureName}" /> <input type="submit"
+				value="Remove" />
 		</form>
-	<%-- 	<form action="getProcedureByName.do">
+		<%-- 	<form action="getProcedureByName.do">
 			<input type="hidden" name="name" value="${procedure.procedureName}" /> 
 			<input type="submit" value="Get Procedure" />
 		</form> --%>
@@ -53,33 +56,28 @@
 	</c:forEach>
 	<c:forEach var="country" items="${countries}">
 		<form action="removeCountry.do">
-			${country.name } 
-			<input type="hidden" name="name" value="${country.name}" /> 
-			<input type="submit" value="Remove" />
+			${country.name } <input type="hidden" name="name"
+				value="${country.name}" /> <input type="submit" value="Remove" />
 		</form>
 		<a href="goToCountryForm.do?name=${country.name}">Update</a>
 	</c:forEach>
 	<c:forEach var="doctor" items="${doctors}">
 		<form action="removeDoctor.do">
-			${doctor.name} 
-			<input type="hidden" name="name" value="${doctor.name}" /> 
-			<input type="submit" value="Remove" />
+			${doctor.name} <input type="hidden" name="name"
+				value="${doctor.name}" /> <input type="submit" value="Remove" />
 		</form>
 		<a href="goToDoctorForm.do?name=${doctor.name}">Update</a>
 	</c:forEach>
 	<c:forEach var="facility" items="${facilities}">
 		<form action="removeFacility.do">
-			${facility.name}
-			${facility.address} 
-			<input type="hidden" name="name" value="${facility.name}" /> 
-			<input type="submit" value="Remove" />
+			${facility.name} ${facility.address} <input type="hidden" name="name"
+				value="${facility.name}" /> <input type="submit" value="Remove" />
 		</form>
 		<a href="goToFacilityForm.do?name=${facility.name}">Update</a>
 	</c:forEach>
 	<c:forEach var="country" items="${procedure.listOfCountries}">
 		<form action="getProcedureByName.do">
-			${country.name} 
-			<input type="submit" value="Remove" />
+			${country.name} <input type="submit" value="Remove" />
 		</form>
 	</c:forEach>
 

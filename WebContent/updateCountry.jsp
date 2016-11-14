@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,10 +7,9 @@
 <title>Update a Country</title>
 </head>
 <body>
-<form action="updateCountry.do">
-Update the Country Name
-<input type="text" name="name" />
-<input type="submit" value="Submit" />
-</form>
+	<form action="updateCountry.do">
+		Update the Country Name <input type="text" name="name" /> <input
+			type="submit" value="Submit" />
+	</form>
 </body>
 </html>
