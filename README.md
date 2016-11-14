@@ -17,6 +17,8 @@ Using Java, Spring, and CSS
 In the future I would like to build this out so it includes several more User oriented features, the first would a a user login
 so that their could be a profile created.  Then their would be a message board where patients could discuss thier experience
 
+Increasing the searching functionality is important, so that the user can specifically search by procedure, country, or facility, and these would be linked together in the code.  I found there to be a problem to link all of this together in it current format because of the way the data was stored for the simulated database.  There didn't seem to be a clear way to link all of those together, and increase the content for both the facilites and physicians.  I was unsure of how do to this for each specific item, since they were all contained in an array together.
+
 This would also lead to a patient rating system based on several factors pertinant to the quality of the procedure as well as a section
 on the qualitative aspects of travel abroad for surgery.  
 
