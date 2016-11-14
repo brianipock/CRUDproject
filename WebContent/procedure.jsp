@@ -6,16 +6,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" rel="styles" href="styles.css">
 <title>Plastic</title>
 </head>
 <body>
 	<h2>Plastic Surgery</h2>
-
-	<a href="getProcedures.do">View procedures</a>
-	<a href="getCountries.do">View Countries</a>
-	<a href="getFacilities.do">View Facilities</a>
-	<a href="getDoctors.do">View Doctors</a>
-
+<ul>
+	<li><a href="getProcedures.do">View procedures</a></li>
+	<li><a href="getCountries.do">View Countries</a></li>
+	<li><a href="getFacilities.do">View Facilities</a></li>
+	<li><a href="getDoctors.do">View Doctors</a></li>
+</ul>
 	<c:choose>
 	<c:when test="${not empty procedures}">
 		<form action="goToAddProcedureForm.do">
@@ -44,10 +45,10 @@
 			<input type="hidden" name="name" value="${procedure.procedureName}" /> 
 			<input type="submit" value="Remove" />
 		</form>
-		<form action="getProcedureByName.do">
+	<%-- 	<form action="getProcedureByName.do">
 			<input type="hidden" name="name" value="${procedure.procedureName}" /> 
 			<input type="submit" value="Get Procedure" />
-		</form>
+		</form> --%>
 		<a href="goToProcedureForm.do?name=${procedure.procedureName}">Update</a>
 	</c:forEach>
 	<c:forEach var="country" items="${countries}">
